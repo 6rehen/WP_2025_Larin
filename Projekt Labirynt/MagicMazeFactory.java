@@ -3,6 +3,11 @@ import java.awt.Color;
 
 public class MagicMazeFactory extends MazeFactory {
     @Override
+    public Room makeRoom(int x, int y, int nr) {
+        return new Room(x, y, nr);
+    }
+
+    @Override
     public Wall makeWall(int x, int y, Directions direction, Color color) {
         // Ignorujemy przekazany kolor i nadpisujemy na fioletowy dla magicznych ścian
         return new Wall(x, y, direction, new Color(138, 43, 226)); // Fioletowy

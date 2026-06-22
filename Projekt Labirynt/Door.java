@@ -1,6 +1,5 @@
 
 import java.awt.*;
-import java.util.Random;
 
 public class Door extends MapSite {
 
@@ -9,7 +8,7 @@ public class Door extends MapSite {
     private Directions direction;
 
     public Door(Room room1, Room room2, Color color) {
-        super(-1,-1, Color.BLACK);
+        super(-1,-1, color);
         roomOne = room1;
         roomTwo = room2;
 

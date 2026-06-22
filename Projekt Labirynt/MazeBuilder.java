@@ -21,7 +21,7 @@ public class MazeBuilder extends JFrame {
         btnStandard.addActionListener( new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 drawMaze(100, 100);
-                drawMaze2(300, 100, new MazeFactory()); 
+                drawMaze2(300, 100, new StandardMazeFactory());
             }
         });
 
@@ -71,7 +71,6 @@ public class MazeBuilder extends JFrame {
         image = panel.getImage();
         
         Wall w1 = factory.makeWall(x, y, Directions.NORTH, Color.GREEN);
-        w1.draw(image);
         Color color = Color.BLACK;
         int nr = 1;
         
@@ -102,10 +101,6 @@ public class MazeBuilder extends JFrame {
         r4.setSite(Directions.WEST, factory.makeWall(x, y, Directions.NORTH, color));
 
         r4.setMine(factory.makeMine(r4.getX(), r4.getY()));
-
-        Door d_1_2 = factory.makeDoor(r1, r2, Color.BLUE);
-        Door d_2_3 = factory.makeDoor(r2, r3, Color.RED);
-        Door d_2_4 = factory.makeDoor(r2, r4, Color.RED);
 
         r1.draw(image);
         r2.draw(image);
